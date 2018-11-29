@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto';
+    /* color: black; */
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: black; */
+}
+
+li{
+    list-style: none;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.menu_desk{
+    background-color: #621577;
+}
+
+.container{
+    width: 100%;
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.itens ul{
+    display: flex;
+}
+
+.itens li{
+    list-style: none;
+    padding: 12px;
+    color: white;
+}
+
+.itens a{
+    text-decoration: none;
+    color: black;
+}
+
+.itens li:hover{
+    background-color: white;
+    color: black;
+    transition: all 0.4s;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.unme{
+    position: absolute;
+    width: 25%;
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    background-color: #eee;
+    display: none;
+}
+
+.menu_open{
+    display: unset;
+}
+
+.btnMenu{
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    text-indent: -9999px;
+    padding: 26.5px 28px;
+    display: block;
+    background-size: 40px;
+}
+
+.btnMenu_open{
+    background-image: url(../imagens/menu_branco.svg);
+}
+
+.btnMenu_close{
+    background-color: #8824a4;
+    background-image: url(../imagens/menu_branco.svg);
+}
+
+.menu_item{
+    padding: 20px 15px;
+    border-bottom: 1px solid white;
+}
+
+.menu_item_action{
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.menu_mobile{
+    display: none;
+}
+
+.banner{
+    background-image: url("../imagens/banner.jpg");
+    background-size: cover;
+    height: 600px;
+    box-shadow: 0px 25px 10px #eee;
+}
+
+.title{
+    font-size: 60pt;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.text1{
+    margin-top: 60px;
+    line-height: 25px;
+}
+
+.function h2{
+    font-size: 50pt;
+    margin-top: 115px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.bar{
+    width: 100%;
+    background-color: #8824a4;
+    height: 10px;
+    margin: auto;
+}
+
+.barrinha{
+    height: 20px;
+    width: 10px;
+    background-color: #621577;
+}
+
+.so_pra_barrinha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.so_pra_barrinha ~ .so_pra_barrinha{
+    margin-left: 290px;
+}
+
+.bar_itens{
+    display: flex;
+}
+
+.bar_item1{
+    width: 300px;
+    height: 100px;
+    background-color: #621577;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.bar_item2{
+    width: 300px;
+    height: 100px;
+    background-color: #621577;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.so_pra_barrinha2{
+    margin-left: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bar_espec{
+    display: none;
+    color: white;
+}
+
+.bar_text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.bar_item1:hover > .bar_text{
+    animation: entrada .6s linear forwards;
+}
+
+.bar_item2:hover > .bar_text{
+    animation: entrada .6s linear forwards;
+}
+
+.bar_text:hover + .bar_espec{
+    transition: all 0.8s;
+    display: inline;
+    background-color: aqua;
+}
+
+@keyframes entrada{
+    0% {
+        transform: scale(1);
+    }
+
+    25%{
+        transform: scale(1.2);
+    }
+
+    50%{
+        transform: scale(1);
+    }
+
+    75% {
+        transform : scale(0.5);
+    }
+
+    100% {
+        transform: scale(0);    
+    }
+}
+
+.precos{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.title_preco{
+    font-size: 50pt;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.preco_item{
+    width: 242px;
+    height: 299px;
+    border: 3px solid #8824a4;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.name{
+    height: 35px;
+    border-bottom: 3px solid #8824a4;
+    font-size: 20pt;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item_preco{
+    height: 52px;
+    border-top: 3px solid #8824a4;
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    line-height: 52px;
+}
+
+.button_saiba{
+    height: 67px;
+    border: 3px solid #8824a4;
+    border-radius: 15px; 
+    margin-top: 19px;
+    text-align: center;
+    line-height: 67px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button_saiba a{
+    text-decoration: none;
+    color: black;
+}
+
+.sobre_nos{
+    margin-top: 180px;
+    display: flex;
+}
+
+.sobre_img{
+    margin-right: 40px;
+    box-shadow: 0px 0px 48px #525252;
+}
+
+.sobre_text h2{
+    font-size: 30pt;
+    margin-bottom: 50px;
+}
+
+.sobre_text p{
+    font-size: 16pt;
+}
+
+.button_sobre{
+    height: 27px;
+    border: 3px solid #8824a4;
+    border-radius: 10px;
+    width: 85px;
+    padding: 2px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+    cursor: pointer; 
+}
+
+.button_sobre a{
+    text-decoration: none;
+}
+
+.chat{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chat_int{
+    width: 100px;
+    height: 100px;
+    border: 4px solid #8824a4;
+    border-radius: 75px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rodape{
+    width: 100%;
+    height: 340px;
+    background-color: rgb(39, 38, 38);
+    margin-top: 54px;
+    color: white;
+}
+
+.footerzao{
+    display: flex;
+    font-size: 16pt;
+}
+
+.quebra_branca{
+    width: 1px;
+    height: 120px;
+    background-color: white;
+}
+
+.logo_footer{
+    display: flex;
+    align-items: center;
+}
+
+.logo_footer img{
+    margin-right: 10px;
+}
+
+.text_footer{
+    margin-top: 21px;
+}
+
+.middle_footer{
+    line-height: 55px;
+    margin-top: 60px;
+}
+
+.middle_contact{
+    display: flex;
+    flex-direction: column;
+}
+
+.middle_icons{
+    margin-top: 10px;
+}
+
+.middle_icons img{
+    cursor: pointer;
+}
+
+.middle_icons img{
+    width: 25px;
+    height: 25px;
+}
+
+.mapinha{
+    margin-top: 38px;
+}
+
+@media screen and (max-width: 1366px){
+    .container{
+        max-width: 1150px;
+    }
+
+    .logo{
+        height: 72px;
+    }
+
+    .bar_item1 {
+        width: 263px;
+        height: 81px;
+    }
+
+    .bar_item2{
+        width: 263px;
+        height: 81px;
+    }
+
+    .sobre_img img{
+        width: 550px;
+        height: 400px;
+    }
+
+    .mapinha img{
+        margin-top: -10px;
+    }
+
+    .rodape{
+        height: 340px;
+    }
+
+    .preco_item{
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .container{
+        max-width: 1000px;
+    }
+
+    .bar {
+        width: 1100px;
+
+    }
+
+    .so_pra_barrinha{
+        margin-left: 11px;
+    }
+
+    .so_pra_barrinha ~ .so_pra_barrinha{
+        margin-left: 269px;
+    }
+
+    .so_pra_barrinha2{
+        margin-left: 289px;
+    }
+
+}
+
+@media screen and (max-width: 1167px){
+    .bar {
+        width: 900px;
+    }
+
+    .preco_item {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .quebra_branca{
+        display: none;
+    }
+
+    .mapinha{
+        display: none;
+    }
+
+    .rodape {
+        height: 312px;
+    }
+
+    .middle_footer {
+        margin-top: 49px;
+    }
+
+    .banner{
+        height: 475px;
+    }
+}
+
+@media screen and (max-width: 1120px){
+    .bar{
+        display: none;
+    }
+
+    /* .barrinha{
+        display: none;
+    } */
+
+    .bar_itens{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .so_pra_barrinha{
+        margin: 0px;
+    }
+
+    .so_pra_barrinha2{
+        margin: 0px;
+    }
+
+    .so_pra_barrinha ~ .so_pra_barrinha {
+        margin-left: 0px;
+    }
+
+    /* .bar_item1{
+        margin: 0px;
+        margin-top: 10px;
+    }
+
+    .bar_item2{
+        margin-top: 10px;
+    } */
+
+    .sobre_img img {
+        width: 503px;
+        height: 339px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .container{
+        max-width: 900px;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .sobre_img img{
+        display: none;
+    }
+
+    .container{
+        max-width: 900px;
+    }
+    
+    .itens{
+        display: none;
+    }
+
+    .menu_mobile{
+        display: unset;
+    }
+}
+
+@media screen and (max-width: 983px){
+    .precos{
+        flex-direction: column;
+    }
+
+    .preco_item{
+        margin-top: 60px;
+    }
+
+    .button_saiba{
+        display: none;
+    }
+
+    .button_saiba ~ .button_saiba{
+        display: unset;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        max-width: 500px;;
+    }
+
+    .descript{
+        display: none;
+    }
+
+    .rodape .container{
+        justify-content: center;
+    }
+
+    .function h2 {
+        font-size: 39pt;
+    }
+
+    .title_preco {
+        font-size: 39pt;
+    }
+
+    .precos {
+        margin-top: 28px;
+    }
+
+    h1{
+        font-size: 40pt;
+    }
+
+    .text1{
+        font-size: 11pt;
+    }
+
+    .unme{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 524px){
+    .container{
+        max-width: 430px;;
+    }
+
+    .text1{
+        display: none;
+    }
+
+    .title_preco {
+        font-size: 34pt;
+    }
+
+    .sobre_text h2 {
+        font-size: 26pt;
+        margin-bottom: 33px;
+    }
+
+    .button_sobre{
+        margin-top: 31px;
+    }
+}
+
+@media screen and (max-width: 401px){
+    .container{
+        max-width: 350px;;
+    }
+
+    .function h2 {
+        font-size: 30pt;
+    }
+
+    .title_preco {
+        font-size: 30pt;
+    }
+
+    .sobre_nos {
+        margin-top: 120px;
+    }
+
+    .rodape{
+        margin-top: 24px;
+    }
+
+    .unme{
+        width: 48%;
+    }
+}

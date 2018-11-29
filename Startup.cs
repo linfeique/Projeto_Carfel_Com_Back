@@ -39,7 +39,7 @@ namespace Senai.Projeto.Carfel
             app.UseMvc(
                 rota => rota.MapRoute(
                     name: "defaults",
-                    template: "{controller=Usuario}/{action=Cadastrar}"
+                    template: "{controller=Usuario}/{action=Index}"
                 )
             );
         }
