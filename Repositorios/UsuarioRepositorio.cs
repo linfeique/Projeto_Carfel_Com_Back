@@ -55,7 +55,7 @@ namespace Senai.Projeto.Carfel.Repositorios
             }
 
             using(StreamWriter escrever = new StreamWriter("usuarios.csv", true)){
-                escrever.WriteLine($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha}");
+                escrever.WriteLine($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};comum");
             }
 
             return usuario;
