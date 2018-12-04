@@ -8,7 +8,7 @@ namespace Senai.Projeto.Carfel.Repositorios
     public class UsuarioRepositorio
     {
 
-        public UsuarioModel BuscarEmailSenha(string email, string senha){
+        static public UsuarioModel BuscarEmailSenha(string email, string senha){
             List<UsuarioModel> lsUsuarios = CarregarDoCSV();
 
             foreach(UsuarioModel usuario in lsUsuarios){
@@ -20,7 +20,7 @@ namespace Senai.Projeto.Carfel.Repositorios
             return null;
         }
 
-        public List<UsuarioModel> CarregarDoCSV(){
+        static public List<UsuarioModel> CarregarDoCSV(){
             List<UsuarioModel> lsUsuarios = new List<UsuarioModel>();
 
             String[] linhas = File.ReadAllLines("usuarios.csv");
@@ -37,7 +37,8 @@ namespace Senai.Projeto.Carfel.Repositorios
                     id: int.Parse(dados[0]),
                     nome: dados[1],
                     email: dados[2],
-                    senha: dados[3]
+                    senha: dados[3],
+                    tipo: dados[4]
                 ); 
 
                 lsUsuarios.Add(usuario);
@@ -51,11 +52,15 @@ namespace Senai.Projeto.Carfel.Repositorios
             if(File.Exists("usuarios.csv")){
                 usuario.Id = File.ReadAllLines("usuarios.csv").Length + 1;
             } else{
-                usuario.Id = 1;
+                usuario.Id = 2;
+
+                using(StreamWriter escrever = new StreamWriter("usuarios.csv")){
+                    escrever.WriteLine($"1;admin;admin@carfel.com;admin;admin");
+                }
             }
 
             using(StreamWriter escrever = new StreamWriter("usuarios.csv", true)){
-                escrever.WriteLine($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha}");
+                escrever.WriteLine($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};comum");
             }
 
             return usuario;

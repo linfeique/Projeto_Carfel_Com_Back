@@ -1,19 +1,10 @@
 body{
     margin: 0;
     padding: 0;
-    /* background-position: center; */
     font-family: sans-serif;
-}
-
-.engloba{
-    width: 630px;
-    height: 600px;
-    background-color: #169797;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    border-radius: 20px;
+    background: url(/imagens/blurred-background-close-up-coffee-cup-908284.jpg);
+    background-size: cover;
+    background-position: bottom;
 }
 
 .loginbox{
@@ -21,22 +12,12 @@ body{
     height: 420px;
     background: #000;
     color: #fff;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
+    margin: auto;
     box-sizing: border-box;
     padding: 70px 30px;
-    border-radius: 15px; 
-}
-
-.avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 50px);
+    border-radius: 15px;
+    margin-top: 168px;
+    margin-bottom: 168px; 
 }
 
 h1{
@@ -71,7 +52,7 @@ h1{
 }
 
 .loginbox input[type="text"]:focus, input[type="password"]:focus{
-    border-color: #ffc107;
+    border-color: #8824a4;
     transition: all 0.3s;
 }
 
@@ -80,7 +61,7 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: #fb2525;
+    background: #8824a4;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
@@ -89,8 +70,7 @@ h1{
 .loginbox input[type="submit"]:hover
 {
     cursor: pointer;
-    background: #ffc107;
-    color: #000;
+    background: #572FAA;
     transition: all 0.4s;
 }
 
@@ -107,36 +87,10 @@ h1{
 
 .loginbox a:hover
 {
-    color: #ffc107;
+    color: #572FAA;
     transition: 0.3s;
 }
 
 .loginbox a:not(:hover){
     transition: 0.3s;
-}
-
-.acesso_negado i{
-    border-radius: 10px 0px 0px 10px;
-    width: 50px;
-    height: 85px;
-    font-size: 44px;
-    color: red;
-    background-color: #e0e0e0;
-    text-align: center;
-    line-height: 85px;
-    margin-right: 10px;
-}
-
-.acesso_negado{
-    width: 385px;
-    height: 85px;
-    background-color: #212121;
-    border-radius: 10px;
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    display: flex;
-    align-items: center;
-    color: #bdbdbd;
-    display: none;
 }

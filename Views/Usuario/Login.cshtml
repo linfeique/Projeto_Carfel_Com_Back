@@ -1,3 +1,7 @@
+@{
+    Layout = "MasterPageUsuario";
+}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,39 +12,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body>
-    
-    <div class='acesso_negado' style="@ViewBag.Aviso">
-        <i class='fas fa-exclamation-circle'></i>
-        <p>@ViewBag.Mensagem</p>
+
+    <div class="loginbox">
+        <h1>Login Here</h1>
+        <form action="/Usuario/Login" method="POST">
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter Email" required maxlength="80">
+            
+            <p>Password</p>
+            <input type="password" name="senha" placeholder="Enter Password" required maxlength="50">
+            
+            <input type="submit" value="Login">
+            @ViewBag.Mensagem  
+            <a href="/Usuario/Cadastro">Don't have an account?</a>
+        </form>
     </div>
 
-    <div class="engloba">
-        <div class="loginbox">
-            <img src="/imagens/avatar.png" class="avatar">
-            <h1>Login Here</h1>
-            <form action="/Usuario/Login" method="POST">
-                <p>Email</p>
-                <input type="text" name="email" placeholder="Enter Email" required maxlength="80">
-                
-                <p>Password</p>
-                <input type="password" name="senha" placeholder="Enter Password" required maxlength="50">
-                
-                <input type="submit" value="Login">
-                
-                <a href="/Usuario/Cadastro">Don't have an account?</a>
-            </form>
-        </div>
-    </div>
-
-
-    <script type="text/javascript">
-        function Comecar(){
-            var teste = document.querySelector(".acesso_negado");
-            var teste2 = document.createTextNode("olacaraio");
-            teste.appendChild("<h1>");
-            teste.appendChild(teste2);
-
-        }
-    </script>
 </body>
 </html>
