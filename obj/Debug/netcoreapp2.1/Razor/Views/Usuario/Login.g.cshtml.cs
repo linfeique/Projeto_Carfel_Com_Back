@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #pragma checksum "C:\Users\44846245837\Desktop\Senai.Projeto.Carfel\Views\Usuario\Login.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "c4d149aee5322ead10feb8f0f5b493f5fb339c23"
+=======
+#pragma checksum "C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\Views\Usuario\Login.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "253f785ef15fed0b05e0eeae5f3cb549dfc5a10f"
+>>>>>>> 80754a9ef13e3b31921480b933bee5108c855348
 =======
 #pragma checksum "C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\Views\Usuario\Login.cshtml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "253f785ef15fed0b05e0eeae5f3cb549dfc5a10f"
 >>>>>>> 80754a9ef13e3b31921480b933bee5108c855348
@@ -54,7 +58,11 @@ namespace AspNetCore
             EndContext();
             BeginContext(69, 416, false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "38d02ef03ef24311a9d5133ecfdeb47f", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a7ab1a105a414e88b5f6e1a5739a0223", async() => {
+>>>>>>> 80754a9ef13e3b31921480b933bee5108c855348
 =======
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a7ab1a105a414e88b5f6e1a5739a0223", async() => {
 >>>>>>> 80754a9ef13e3b31921480b933bee5108c855348

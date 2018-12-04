@@ -48,6 +48,7 @@ namespace Senai.Projeto.Carfel.Controllers
                 HttpContext.Session.SetString("idUsuario", usuario.Id.ToString());
                 HttpContext.Session.SetString("tipoUsuario", usuario.Tipo.ToString());
 
+<<<<<<< HEAD
                 if(HttpContext.Session.GetString("tipoUsuario") != "comum"){
                     // return RedirectToAction("Comentar", "Comentario");
                     return RedirectToAction("", "");
@@ -56,6 +57,9 @@ namespace Senai.Projeto.Carfel.Controllers
                     return RedirectToAction("", "");
                 }
                 
+=======
+                return RedirectToAction("Cometar", "Comentario");
+>>>>>>> 80754a9ef13e3b31921480b933bee5108c855348
             } else{
                 ViewBag.Mensagem = "Email ou senha estão incorretos";
             }
