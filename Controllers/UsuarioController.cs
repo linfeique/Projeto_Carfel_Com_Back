@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Projeto.Carfel.Models;
@@ -37,17 +38,24 @@ namespace Senai.Projeto.Carfel.Controllers
         public IActionResult Login(IFormCollection form){
             
             UsuarioModel usuarioModel = new UsuarioModel(
-                form["email"], 
-                form["senha"]
+                senha: form["senha"],
+                email: form["email"] 
             );
-
-            UsuarioRepositorio usuarioRap = new UsuarioRepositorio();
-            UsuarioModel usuario = usuarioRap.BuscarEmailSenha(usuarioModel.Email, usuarioModel.Senha);
+            
+            UsuarioModel usuario = UsuarioRepositorio.BuscarEmailSenha(usuarioModel.Email, usuarioModel.Senha);
 
             if(usuario != null){
-                HttpContext.Session.SetString("idUsuario", usuarioModel.Email.ToString());
+                HttpContext.Session.SetString("idUsuario", usuario.Id.ToString());
+                HttpContext.Session.SetString("tipoUsuario", usuario.Tipo.ToString());
 
-                return RedirectToAction("MasterPageLogadoComum");
+                if(HttpContext.Session.GetString("tipoUsuario") != "comum"){
+                    // return RedirectToAction("Comentar", "Comentario");
+                    return RedirectToAction("", "");
+                } else{
+                    // return RedirectToAction("Avaliar", "Comentario");
+                    return RedirectToAction("", "");
+                }
+                
             } else{
                 ViewBag.Mensagem = "Email ou senha estão incorretos";
             }

@@ -94,29 +94,3 @@ h1{
 .loginbox a:not(:hover){
     transition: 0.3s;
 }
-
-.acesso_negado i{
-    border-radius: 10px 0px 0px 10px;
-    width: 50px;
-    height: 85px;
-    font-size: 44px;
-    color: red;
-    background-color: #e0e0e0;
-    text-align: center;
-    line-height: 85px;
-    margin-right: 10px;
-}
-
-.acesso_negado{
-    width: 385px;
-    height: 85px;
-    background-color: #212121;
-    border-radius: 10px;
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    display: flex;
-    align-items: center;
-    color: #bdbdbd;
-    display: none;
-}
