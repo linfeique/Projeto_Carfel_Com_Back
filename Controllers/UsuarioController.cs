@@ -47,7 +47,7 @@ namespace Senai.Projeto.Carfel.Controllers
             if(usuario != null){
                 HttpContext.Session.SetString("idUsuario", usuarioModel.Email.ToString());
 
-                return RedirectToAction("MasterPageLogadoComum");
+                return RedirectToAction("Cometar", "Comentario");
             } else{
                 ViewBag.Mensagem = "Email ou senha estão incorretos";
             }
