@@ -1,34 +1,30 @@
-<<<<<<< HEAD
-=======
 using System;
->>>>>>> 80754a9ef13e3b31921480b933bee5108c855348
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Projeto_Carfel_Com_Back.Repositorios;
 using Senai.Projeto.Carfel.Models;
 
-namespace Senai.Projeto.Carfel.Controllers
-{
-    public class ComentarioController : Controller
-    {
+namespace Senai.Projeto.Carfel.Controllers {
+    public class ComentarioController : Controller {
         [HttpGet]
-        public IActionResult Comentar(){
-            return View();
+        public IActionResult Comentar () {
+            return View ();
         }
 
         [HttpPost]
-        public IActionResult Comentar(IFormCollection form){
-<<<<<<< HEAD
-=======
-            UsuarioModel usuarioModel = new UsuarioModel();
+        public IActionResult Comentar (IFormCollection form) {
 
-            ComentarioModel comentario = new ComentarioModel(
+            UsuarioModel usuarioModel = new UsuarioModel ();
+            ComentarioModel comentaModel = new ComentarioModel (
                 conteudo: form["conteudo"],
-                nome: usuarioModel.Nome,
+                nome: form["nome"],
                 dataCriacao: DateTime.Now
             );
 
->>>>>>> 80754a9ef13e3b31921480b933bee5108c855348
-            return null;
+            ComentarioRepositorio comentarioRap = new ComentarioRepositorio();
+            comentarioRap.Comenta(comentaModel);
+
+            return View();
         }
     }
 }
