@@ -1,70 +1,65 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Projeto.Carfel.Models;
-using System.Collections.Generic;
-using System.IO;
 using Senai.Projeto.Carfel.Repositorios;
 
-namespace Senai.Projeto.Carfel.Controllers
-{
-    public class UsuarioController : Controller
-    {
+namespace Senai.Projeto.Carfel.Controllers {
+    public class UsuarioController : Controller {
         [HttpGet]
-        public IActionResult Index() {
-            return View();
-        }
-        
-        [HttpGet]
-        public ActionResult Cadastro(){
-            return View();
-        }
-        
-        [HttpPost]
-        public ActionResult Cadastro(IFormCollection form){
-            
-            UsuarioModel usuarioModel = new UsuarioModel(form["nome"], form["email"], form["senha"]);
-
-            UsuarioRepositorio usuarioRap = new UsuarioRepositorio();
-            usuarioRap.Cadastrar(usuarioModel);
-
-            return RedirectToAction("Login", "Usuario");
+        public IActionResult Index () {
+            return View ();
         }
 
         [HttpGet]
-        public IActionResult Login() => View();
+        public ActionResult Cadastro () {
+            return View ();
+        }
 
         [HttpPost]
-        public IActionResult Login(IFormCollection form){
-            
-            UsuarioModel usuarioModel = new UsuarioModel(
+        public ActionResult Cadastro (IFormCollection form) {
+
+            UsuarioModel usuarioModel = new UsuarioModel (form["nome"], form["email"], form["senha"]);
+
+            UsuarioRepositorio usuarioRap = new UsuarioRepositorio ();
+            usuarioRap.Cadastrar (usuarioModel);
+
+            return RedirectToAction ("Login", "Usuario");
+        }
+
+        [HttpGet]
+        public IActionResult Login () => View ();
+
+        [HttpPost]
+        public IActionResult Login (IFormCollection form) {
+
+            UsuarioModel usuarioModel = new UsuarioModel (
                 senha: form["senha"],
-                email: form["email"] 
+                email: form["email"]
             );
-            
-            UsuarioModel usuario = UsuarioRepositorio.BuscarEmailSenha(usuarioModel.Email, usuarioModel.Senha);
 
-            if(usuario != null){
-                HttpContext.Session.SetString("idUsuario", usuario.Id.ToString());
-                HttpContext.Session.SetString("tipoUsuario", usuario.Tipo.ToString());
+            UsuarioModel usuario = UsuarioRepositorio.BuscarEmailSenha (usuarioModel.Email, usuarioModel.Senha);
 
-<<<<<<< HEAD
-                if(HttpContext.Session.GetString("tipoUsuario") != "comum"){
+            if (usuario != null) {
+                HttpContext.Session.SetString ("idUsuario", usuario.Id.ToString ());
+                HttpContext.Session.SetString ("tipoUsuario", usuario.Tipo.ToString ());
+                HttpContext.Session.SetString ("nomeUsuario", usuario.Nome.ToString ());
+
+                if (HttpContext.Session.GetString ("tipoUsuario") != "comum") {
                     // return RedirectToAction("Comentar", "Comentario");
-                    return RedirectToAction("", "");
-                } else{
+                    return RedirectToAction ("", "");
+                } else {
                     // return RedirectToAction("Avaliar", "Comentario");
-                    return RedirectToAction("", "");
+                    return RedirectToAction ("Comentar", "Comentario");
                 }
-                
-=======
-                return RedirectToAction("Cometar", "Comentario");
->>>>>>> 80754a9ef13e3b31921480b933bee5108c855348
-            } else{
+
+            } else {
                 ViewBag.Mensagem = "Email ou senha estão incorretos";
             }
 
-            return View();
+            return View ();
         }
     }
 }
