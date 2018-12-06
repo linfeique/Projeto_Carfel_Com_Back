@@ -12,7 +12,25 @@ namespace Senai.Projeto.Carfel.Controllers {
 
         [HttpPost]
         public IActionResult Comentar(IFormCollection form){
-            return null;
+
+            if(!string.IsNullOrEmpty(HttpContext.Session.GetString("idUsuario"))){
+                ViewBag.Mensagem = "logadinho";
+                ComentarioModel comentario = new ComentarioModel(
+                    conteudo: form["conteudo"] 
+                );
+
+                comentario.EmailUsuario = HttpContext.Session.GetString("emailUsuario");
+
+                ComentarioRepositorio comentarioRap = new ComentarioRepositorio();
+                comentarioRap.Comentar(comentario);
+
+                ViewBag.Mensagem = "Comentário cadastrado com sucesso";
+                return View();
+            } else{
+                ViewBag.Mensagem = "nullzinho";
+            }
+
+            return RedirectToAction("Login", "Usuario");
         }
     }
 }

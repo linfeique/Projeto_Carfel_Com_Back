@@ -10,7 +10,8 @@
 <body>
     <div class="container">
         <div class="container_int">
-            <form action="/Comentar/Comentario" method="POST">
+            <form action="/Comentario/Comentar" method="POST">
+                @ViewBag.Mensagem
                 <input type="textarea" name="conteudo" placeholder="Digite seu comentário" required maxlength="120">
                 <input type="submit" value="Enviar">
             </form>
