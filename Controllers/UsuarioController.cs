@@ -8,6 +8,7 @@ using Senai.Projeto.Carfel.Repositorios;
 
 namespace Senai.Projeto.Carfel.Controllers {
     public class UsuarioController : Controller {
+        
         [HttpGet]
         public IActionResult Index () {
             return View ();
@@ -22,6 +23,17 @@ namespace Senai.Projeto.Carfel.Controllers {
         public ActionResult Cadastro (IFormCollection form) {
 
             UsuarioModel usuarioModel = new UsuarioModel (form["nome"], form["email"], form["senha"]);
+            HttpContext.Session.SetString("emailUsuario", usuarioModel.Email);
+
+            string teste = HttpContext.Session.GetString("emailUsuario");
+
+            using(StreamReader ler = new StreamReader("comentario.csv")){
+                string leitura = ler.ReadToEnd();
+                if(leitura.Contains(teste)){
+                    ViewBag.Mensagem = "Esse usuário já existe";
+                    return RedirectToAction("Login", "Usuario");
+                }
+            }
 
             UsuarioRepositorio usuarioRap = new UsuarioRepositorio ();
             usuarioRap.Cadastrar (usuarioModel);
@@ -45,7 +57,7 @@ namespace Senai.Projeto.Carfel.Controllers {
             if (usuario != null) {
                 HttpContext.Session.SetString ("idUsuario", usuario.Id.ToString ());
                 HttpContext.Session.SetString ("tipoUsuario", usuario.Tipo.ToString ());
-                HttpContext.Session.SetString ("nomeUsuario", usuario.Nome.ToString ());
+                HttpContext.Session.SetString ("emailUsuario", usuario.Email.ToString ());
 
                 if (HttpContext.Session.GetString ("tipoUsuario") != "comum") {
                     // return RedirectToAction("Comentar", "Comentario");

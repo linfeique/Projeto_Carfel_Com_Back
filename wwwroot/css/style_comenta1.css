@@ -1,6 +1,64 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body{
+    background: url(/imagens/architecture-background-blank-158771.jpg);
+    background-size: cover; 
+}
+
+.container_comentario{
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+
+.container_int{
+    width: 70%;
+    margin: auto;
+    margin-top: 184px;
+    margin-bottom: 184px;
+    background-color: rgba(0, 0, 0, 0.98);
+    padding: 60px;
+    border-radius: 30px;
+}
+
+.conteudo{
+    width: 100%;
+    color: white;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    outline: none;
+    padding: 5px 0px 5px 2px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.bar{
+    width: 100%;
+    background-color: white;
+    height: 1px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.conteudo:focus ~ .bar{
+    background-color: #6a1b9a;
+    transition: all 0.5s;
+}
+
+.conteudo:not(:focus) ~ .bar{
+    background-color: white;
+    transition: all 0.5s;
+}
+
+.btn{
+    padding: 6px 15px;
+    background-color: #3C1D7B;
+    color: white;
+    border: 0;
+    border-radius: 5px; 
+}

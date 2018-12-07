@@ -43,7 +43,7 @@ namespace AspNetCore
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"pt-BR\">\r\n\r\n");
             EndContext();
             BeginContext(40, 302, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "947338fa62c640ebb9c15f5cf927f40e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f56ea57bf8d4cc8bd47c15b930dbb24", async() => {
                 BeginContext(46, 289, true);
                 WriteLiteral(@"
     <meta charset=""utf-8"" />
@@ -69,7 +69,7 @@ namespace AspNetCore
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(346, 9024, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "610163ba2c074badb6c9447b50660727", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4813077247324803a253e570d7465bea", async() => {
                 BeginContext(352, 9011, true);
                 WriteLiteral(@"
     <nav class=""menu_desk"">

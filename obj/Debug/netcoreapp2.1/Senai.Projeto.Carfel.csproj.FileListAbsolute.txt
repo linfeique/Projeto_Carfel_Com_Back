@@ -48,7 +48,6 @@ C:\Users\cliente\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Senai.P
 C:\Users\cliente\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.dll
 C:\Users\cliente\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.pdb
 C:\Users\cliente\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.csproj.CopyComplete
-C:\Users\44846245837\Desktop\Senai.Projeto.Carfel\obj\Debug\netcoreapp2.1\Razor\Views\Comentario\CadastroComentario.g.cshtml.cs
 C:\Users\44846245837\Desktop\Senai.Projeto.Carfel\obj\Debug\netcoreapp2.1\Razor\Views\Shared\MasterPageUsuario.g.cshtml.cs
 C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\bin\Debug\netcoreapp2.1\Senai.Projeto.Carfel.deps.json
 C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\bin\Debug\netcoreapp2.1\Senai.Projeto.Carfel.runtimeconfig.json
@@ -77,5 +76,6 @@ C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Sen
 C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.dll
 C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.pdb
 C:\Users\44846245837\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Senai.Projeto.Carfel.csproj.CopyComplete
-C:\Users\cliente\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Razor\Views\Comentario\CadastroComentario.g.cshtml.cs
 C:\Users\cliente\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Razor\Views\Shared\MasterPageUsuario.g.cshtml.cs
+C:\Users\44846245837\Desktop\Senai.Projeto.Carfel\obj\Debug\netcoreapp2.1\Razor\Views\Comentario\Comentar.g.cshtml.cs
+C:\Users\cliente\Desktop\Projeto_Carfel_Com_Back\obj\Debug\netcoreapp2.1\Razor\Views\Comentario\Comentar.g.cshtml.cs

@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Projeto_Carfel_Com_Back.Repositorios;
@@ -14,17 +13,26 @@ namespace Senai.Projeto.Carfel.Controllers {
         [HttpPost]
         public IActionResult Comentar (IFormCollection form) {
 
-            UsuarioModel usuarioModel = new UsuarioModel ();
-            ComentarioModel comentaModel = new ComentarioModel (
-                conteudo: form["conteudo"],
-                nome: form["nome"],
-                dataCriacao: DateTime.Now
-            );
+            if (!string.IsNullOrEmpty (HttpContext.Session.GetString ("idUsuario"))) {
+                ViewBag.Mensagem = "logadinho";
+                ComentarioModel comentario = new ComentarioModel (
+                    conteudo: form["conteudo"]
+                );
 
-            ComentarioRepositorio comentarioRap = new ComentarioRepositorio();
-            comentarioRap.Comenta(comentaModel);
+                comentario.EmailUsuario = HttpContext.Session.GetString ("emailUsuario");
 
-            return View();
+                ViewData["Usuarios"] = comentario;
+
+                ComentarioRepositorio comentarioRap = new ComentarioRepositorio ();
+                comentarioRap.Comentar (comentario);
+
+                ViewBag.Mensagem = "Comentário cadastrado com sucesso";
+                return View ();
+            } else {
+                ViewBag.Mensagem = "nullzinho";
+            }
+
+            return RedirectToAction ("Login", "Usuario");
         }
     }
 }

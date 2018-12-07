@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.AspNetCore.Http;
+using Senai.Projeto.Carfel.Controllers;
 using Senai.Projeto.Carfel.Models;
 
 namespace Senai.Projeto.Carfel.Repositorios

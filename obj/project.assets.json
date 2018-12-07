@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cliente\\Desktop\\Projeto_Carfel_Com_Back\\Senai.Projeto.Carfel.csproj",
+      "projectUniqueName": "c:\\Users\\cliente\\Desktop\\Projeto_Carfel_Com_Back\\Senai.Projeto.Carfel.csproj",
       "projectName": "Senai.Projeto.Carfel",
-      "projectPath": "C:\\Users\\cliente\\Desktop\\Projeto_Carfel_Com_Back\\Senai.Projeto.Carfel.csproj",
+      "projectPath": "c:\\Users\\cliente\\Desktop\\Projeto_Carfel_Com_Back\\Senai.Projeto.Carfel.csproj",
       "packagesPath": "C:\\Users\\cliente\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cliente\\Desktop\\Projeto_Carfel_Com_Back\\obj\\",
+      "outputPath": "c:\\Users\\cliente\\Desktop\\Projeto_Carfel_Com_Back\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11559,13 +11559,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\cliente\\Desktop\\Projeto_Carfel_Com_Back\\obj\\Senai.Projeto.Carfel.csproj.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -1,0 +1,24 @@
+@{
+    Layout = "MasterPageLogadoComum";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style_comenta1.css" />
+</head>
+<body>
+    <div class="container_comentario">
+        <form class="container_int" action="/Comentario/Comentar" method="POST">
+            @ViewBag.Mensagem
+            <input type="text" class="conteudo" name="conteudo" placeholder="Digite seu comentário" required maxlength="120">
+            <div class="bar"></div>
+            <input type="submit" class="btn" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
