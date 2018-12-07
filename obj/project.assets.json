@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\44846245837\\Desktop\\Senai.Projeto.Carfel\\Senai.Projeto.Carfel.csproj",
+      "projectUniqueName": "c:\\Users\\44846245837\\Desktop\\Senai.Projeto.Carfel\\Senai.Projeto.Carfel.csproj",
       "projectName": "Senai.Projeto.Carfel",
-      "projectPath": "C:\\Users\\44846245837\\Desktop\\Senai.Projeto.Carfel\\Senai.Projeto.Carfel.csproj",
+      "projectPath": "c:\\Users\\44846245837\\Desktop\\Senai.Projeto.Carfel\\Senai.Projeto.Carfel.csproj",
       "packagesPath": "C:\\Users\\44846245837\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\44846245837\\Desktop\\Senai.Projeto.Carfel\\obj\\",
+      "outputPath": "c:\\Users\\44846245837\\Desktop\\Senai.Projeto.Carfel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

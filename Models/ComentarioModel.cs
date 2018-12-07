@@ -8,9 +8,17 @@ namespace Senai.Projeto.Carfel.Models
         public int IdComentario { get; set; }
         public string EmailUsuario { get; set; }
         public DateTime DataCriacao { get; set; }
+        public bool Aprovado { get; set; }
 
         public ComentarioModel(){
         
+        }
+
+        public ComentarioModel(string conteudo, int id_,string nome, DateTime dataCriacao){
+            this.Conteudo = conteudo;
+            this.IdComentario = id_;
+            this.EmailUsuario = nome;
+            this.DataCriacao = dataCriacao;
         }
 
         public ComentarioModel(string conteudo, string nome, DateTime dataCriacao){

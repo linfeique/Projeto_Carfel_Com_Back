@@ -8,14 +8,28 @@ using Senai.Projeto.Carfel.Repositorios;
 
 namespace Senai.Projeto.Carfel.Controllers {
     public class UsuarioController : Controller {
-        
+
+        [HttpGet]
+        public IActionResult Administrador(){
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Index () {
             return View ();
         }
 
         [HttpGet]
-        public ActionResult Cadastro () {
+        public IActionResult Sair(){
+            HttpContext.Session.Remove("idUsuario");
+            HttpContext.Session.Remove("tipoUsuario");
+            HttpContext.Session.Remove("emailUsuario");
+
+            return RedirectToAction("Login", "Usuario");
+        }
+
+        [HttpGet]
+        public IActionResult Cadastro () {
             return View ();
         }
 
@@ -61,7 +75,7 @@ namespace Senai.Projeto.Carfel.Controllers {
 
                 if (HttpContext.Session.GetString ("tipoUsuario") != "comum") {
                     // return RedirectToAction("Comentar", "Comentario");
-                    return RedirectToAction ("", "");
+                    return RedirectToAction ("Administrador", "Usuario");
                 } else {
                     // return RedirectToAction("Avaliar", "Comentario");
                     return RedirectToAction ("Comentar", "Comentario");
