@@ -1,0 +1,41 @@
+@using Senai.Projeto.Carfel.Models;
+@{
+    Layout = "MasterPageLogadoAdmin";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style_admin.css" />
+</head>
+<body>
+    <div class="conteiner">
+        <h1>Aprovação ou Rejeição</h1>
+        @foreach (ComentarioModel comentario in ViewData["dados"] as List<ComentarioModel>){
+            <div class="conteiner_int">
+                <div class="header">
+                    <div class="texto">
+                        @comentario.EmailUsuario
+                    </div>
+                    <div class="btns">
+                        <!-- <input class="aproved" type="submit" value="Aprovar">
+                        <input class="reproved" type="submit" value="Reprovar"> -->
+                        <a class="aproved" href="#">Aprovar</a>
+                        <a class="reproved" href="#">Reprovar</a>
+                    </div>
+                </div>
+                <div class="main">
+                    <p>@comentario.Conteudo</p>
+                </div>
+                <div class="footer">
+                    <span>@comentario.DataCriacao</span>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

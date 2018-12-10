@@ -24,28 +24,28 @@ namespace Projeto_Carfel_Com_Back.Repositorios {
             return comentario;
         }
 
-        static public List<ComentarioModel> CarregarDoCSV(){
-            List<ComentarioModel> lsComentario = new List<ComentarioModel>();
+        // static public List<ComentarioModel> CarregarDoCSV(){
+        //     List<ComentarioModel> lsComentario = new List<ComentarioModel>();
 
-            string[] linhas = File.ReadAllLines("comentario.csv");
+        //     string[] linhas = File.ReadAllLines("comentario.csv");
 
-            foreach (string comentar in linhas)
-            {
-                if(string.IsNullOrEmpty(comentar)){
-                    continue;
-                }
+        //     foreach (string comentar in linhas)
+        //     {
+        //         if(string.IsNullOrEmpty(comentar)){
+        //             continue;
+        //         }
                 
-                string[] dadosDaLinha = comentar.Split(";");
+        //         string[] dadosDaLinha = comentar.Split(";");
 
-                ComentarioModel comentario = new ComentarioModel(
-                    id_: int.Parse(dadosDaLinha[0]),
-                    nome: dadosDaLinha[1],
-                    conteudo: dadosDaLinha[2],
-                    dataCriacao: DateTime.Parse(dadosDaLinha[3])
-                );
-                lsComentario.Add(comentario);
-            }
-            return lsComentario;
-        }
+        //         ComentarioModel comentario = new ComentarioModel(
+        //             id_: int.Parse(dadosDaLinha[0]),
+        //             nome: dadosDaLinha[1],
+        //             conteudo: dadosDaLinha[2],
+        //             dataCriacao: DateTime.Parse(dadosDaLinha[3])
+        //         );
+        //         lsComentario.Add(comentario);
+        //     }
+        //     return lsComentario;
+        // }
     }
 }

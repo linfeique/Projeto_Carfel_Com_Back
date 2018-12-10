@@ -10,11 +10,6 @@ namespace Senai.Projeto.Carfel.Controllers {
     public class UsuarioController : Controller {
 
         [HttpGet]
-        public IActionResult Administrador(){
-            return View();
-        }
-
-        [HttpGet]
         public IActionResult Index () {
             return View ();
         }
@@ -75,7 +70,7 @@ namespace Senai.Projeto.Carfel.Controllers {
 
                 if (HttpContext.Session.GetString ("tipoUsuario") != "comum") {
                     // return RedirectToAction("Comentar", "Comentario");
-                    return RedirectToAction ("Administrador", "Usuario");
+                    return RedirectToAction ("Administrador", "Comentario");
                 } else {
                     // return RedirectToAction("Avaliar", "Comentario");
                     return RedirectToAction ("Comentar", "Comentario");

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Senai.Projeto.Carfel.Models;
+using Senai.Projeto.Carfel.Repositorios;
 
 namespace Senai.Projeto.Carfel
 {
@@ -14,6 +16,21 @@ namespace Senai.Projeto.Carfel
     {
         public static void Main(string[] args)
         {
+
+            ComentRapSerie comentRap = new ComentRapSerie();
+
+            if(File.Exists("comentario.dat")){
+                List<ComentarioModel> comentarioSalvos = comentRap.LerArqSerie();
+            } else{
+                ComentarioModel comentario = new ComentarioModel();
+
+                comentario.Aprovado = false;
+                comentario.Conteudo = "Compre o nosso produto";
+                comentario.DataCriacao = DateTime.Now;
+                comentario.EmailUsuario = "Admin@carfel.com";
+                comentario.IdComentario = 1;
+            }
+
             CreateWebHostBuilder(args).Build().Run();
         }
 

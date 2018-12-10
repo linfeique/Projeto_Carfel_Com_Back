@@ -2,10 +2,21 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Projeto_Carfel_Com_Back.Repositorios;
+using Senai.Projeto.Carfel.Interfaces;
 using Senai.Projeto.Carfel.Models;
+using Senai.Projeto.Carfel.Repositorios;
 
 namespace Senai.Projeto.Carfel.Controllers {
     public class ComentarioController : Controller {
+
+        public IComents ComentarioRepositorio {get; set;}
+
+        // Se caso der merda é só colocar uppercase no C
+
+        public ComentarioController(){
+            ComentarioRepositorio = new ComentRapSerie();
+        }
+
         [HttpGet]
         public IActionResult Comentar () {
             return View ();
@@ -22,8 +33,7 @@ namespace Senai.Projeto.Carfel.Controllers {
 
                 comentario.EmailUsuario = HttpContext.Session.GetString ("emailUsuario");
 
-                ComentarioRepositorio comentarioRap = new ComentarioRepositorio ();
-                comentarioRap.Comentar (comentario);
+                ComentarioRepositorio.Comentar (comentario);
 
                 ViewBag.Mensagem = "Comentário cadastrado com sucesso";
                 return View ();
@@ -34,10 +44,13 @@ namespace Senai.Projeto.Carfel.Controllers {
             return RedirectToAction ("Login", "Usuario");
         }
 
+
         [HttpGet]
-        public IActionResult Listar(){
-            ViewData["Dados"] = ComentarioRepositorio.CarregarDoCSV().ToList();
+        public IActionResult Administrador(){
+            ViewData["dados"] =  ComentarioRepositorio.Listar();
             return View();
         }
+
+
     }
 }

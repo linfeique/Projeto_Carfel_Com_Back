@@ -2,6 +2,8 @@ using System;
 
 namespace Senai.Projeto.Carfel.Models
 {
+    // [STAThread]
+    [Serializable]
     public class ComentarioModel
     {
         public string Conteudo { get; set; }
