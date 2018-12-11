@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,8 @@ namespace Senai.Projeto.Carfel.Controllers {
                 );
 
                 comentario.EmailUsuario = HttpContext.Session.GetString ("emailUsuario");
+
+                comentario.DataCriacao = DateTime.Now;
 
                 ComentarioRepositorio.Comentar (comentario);
 

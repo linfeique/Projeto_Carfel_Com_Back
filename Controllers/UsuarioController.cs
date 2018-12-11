@@ -15,12 +15,12 @@ namespace Senai.Projeto.Carfel.Controllers {
         }
 
         [HttpGet]
-        public IActionResult Sair(){
-            HttpContext.Session.Remove("idUsuario");
-            HttpContext.Session.Remove("tipoUsuario");
-            HttpContext.Session.Remove("emailUsuario");
+        public IActionResult Sair () {
+            HttpContext.Session.Remove ("idUsuario");
+            HttpContext.Session.Remove ("tipoUsuario");
+            HttpContext.Session.Remove ("emailUsuario");
 
-            return RedirectToAction("Login", "Usuario");
+            return RedirectToAction ("Login", "Usuario");
         }
 
         [HttpGet]
@@ -32,15 +32,15 @@ namespace Senai.Projeto.Carfel.Controllers {
         public ActionResult Cadastro (IFormCollection form) {
 
             UsuarioModel usuarioModel = new UsuarioModel (form["nome"], form["email"], form["senha"]);
-            HttpContext.Session.SetString("emailUsuario", usuarioModel.Email);
+            HttpContext.Session.SetString ("emailUsuario", usuarioModel.Email);
 
-            string teste = HttpContext.Session.GetString("emailUsuario");
+            string teste = HttpContext.Session.GetString ("emailUsuario");
 
-            using(StreamReader ler = new StreamReader("comentario.csv")){
-                string leitura = ler.ReadToEnd();
-                if(leitura.Contains(teste)){
+            using (StreamReader ler = new StreamReader ("comentario.csv")) {
+                string leitura = ler.ReadToEnd ();
+                if (leitura.Contains (teste)) {
                     ViewBag.Mensagem = "Esse usuário já existe";
-                    return RedirectToAction("Login", "Usuario");
+                    return RedirectToAction ("Login", "Usuario");
                 }
             }
 
@@ -81,6 +81,24 @@ namespace Senai.Projeto.Carfel.Controllers {
             }
 
             return View ();
+        }
+
+        [HttpGet]
+        public IActionResult CadastroAdmin () {
+            return View ();
+        }
+
+        [HttpPost]
+        public IActionResult CadastroAdmin (IFormCollection form) {
+            UsuarioModel usuarioModel = new UsuarioModel (form["nome"], form["email"], form["senha"], form["tipo"]);
+            HttpContext.Session.SetString ("emailUsuario", usuarioModel.Email);
+
+            string teste = HttpContext.Session.GetString ("emailUsuario");
+
+            UsuarioRepositorio usuarioRap = new UsuarioRepositorio ();
+            usuarioRap.CadastroAdmin (usuarioModel);
+
+            return RedirectToAction ("Administrador", "Comentario");
         }
     }
 }
