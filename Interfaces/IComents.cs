@@ -8,5 +8,9 @@ namespace Senai.Projeto.Carfel.Interfaces
         ComentarioModel Comentar (ComentarioModel comentario);
 
         List<ComentarioModel> Listar();
+
+        void Aprovar(int id);
+
+        void Excluir(int id);
     }
 }

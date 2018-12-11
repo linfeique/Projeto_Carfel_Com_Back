@@ -53,5 +53,33 @@ namespace Senai.Projeto.Carfel.Repositorios
 
             return (List<ComentarioModel>) serializaAmemoria.Deserialize(memoria);
         }
+
+        public ComentarioModel BuscarPorId(int id){
+            foreach (ComentarioModel comentario in comentariosSalvos)
+            {
+                if(id == comentario.IdComentario){
+                    return comentario;
+                }
+            }
+            return null;
+        }
+
+        public void Aprovar(int id_aprova){
+            ComentarioModel comentarioBuscado = BuscarPorId(id_aprova);
+
+            if(comentarioBuscado != null){
+                comentarioBuscado.Aprovado = true;
+                EscreverArq();
+            }
+        }
+
+        public void Excluir(int id_reprova){
+            ComentarioModel comentarioBuscado = BuscarPorId(id_reprova);
+
+            if(comentarioBuscado != null){
+                comentariosSalvos.Remove(comentarioBuscado);
+                EscreverArq();
+            }
+        }
     }
 }

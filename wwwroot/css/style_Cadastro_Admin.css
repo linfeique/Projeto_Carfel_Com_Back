@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(/imagens/pexels-photo-205316.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.loginbox{
+    width: 320px;
+    height: 480px;
+    background: #000;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 50px 30px;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 168px;
+    margin-bottom: 168px;
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 35px;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px;
+}
+
+.loginbox input[type="text"]:focus, input[type="password"]:focus{
+    border-color: #8824a4;
+    transition: all 0.3s;
+}
+
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #8824a4;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #572FAA;
+    transition: all 0.4s;
+}
+
+.loginbox input[type="submit"]:not(:hover){
+    transition: all 0.4s;
+}
+
+.tipos{
+    outline: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 4px 4px;
+    border: 0.5px solid #fff;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+}
+
+.tipos option{
+    -webkit-appearance: none;
+    background-color: black;
+    padding: 2px;
+    border: 0;
+    outline: none;
+    color: white;
+}

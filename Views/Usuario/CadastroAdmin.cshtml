@@ -1,0 +1,37 @@
+@{
+    Layout = "MasterPageLogadoAdmin";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style_Cadastro_Admin.css" />
+</head>
+<body>
+    <div class="loginbox">
+        <h1>Register Here</h1>
+        <form action="/Usuario/CadastroAdmin" method="POST">
+            <p>Username</p>
+            <input type="text" name="nome" placeholder="Enter Name" required maxlength="80">
+            
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter Email" required maxlength="80">
+            
+            <p>Password</p>
+            <input type="password" name="senha" placeholder="Enter Password" required maxlength="50">
+
+            <p>Tipo</p>
+            <select name="tipo" class="tipos">
+                <option value="comum">Comum</option>
+                <option value="admin">Admin</option>
+            </select>
+            
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

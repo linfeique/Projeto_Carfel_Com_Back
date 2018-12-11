@@ -1,6 +1,6 @@
 @using Senai.Projeto.Carfel.Models;
 @{
-    Layout = "MasterPageLogadoAdmin";
+    Layout = "MasterPageComentarios";
 }
 
 <!DOCTYPE html>
@@ -10,20 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/style_admin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style_comentarios.css" />
 </head>
 <body>
     <div class="conteiner">
-        <h1>Aprovação ou Rejeição</h1>
+        <h1>Comentários</h1>
         @foreach (ComentarioModel comentario in ViewData["comentarios"] as List<ComentarioModel>){
             <div class="conteiner_int">
                 <div class="header">
                     <div class="texto">
                         @comentario.EmailUsuario
-                    </div>
-                    <div class="btns">
-                        <a class="aproved" href="/Comentario/Aprovar?id_aprova=@comentario.IdComentario">Aprovar</a>
-                        <a class="reproved" href="/Comentario/Excluir?id_reprova=@comentario.IdComentario">Reprovar</a>
                     </div>
                 </div>
                 <div class="main">

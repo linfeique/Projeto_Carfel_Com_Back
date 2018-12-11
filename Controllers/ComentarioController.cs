@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,8 @@ namespace Senai.Projeto.Carfel.Controllers {
 
                 comentario.EmailUsuario = HttpContext.Session.GetString ("emailUsuario");
 
+                comentario.DataCriacao = DateTime.Now;
+
                 ComentarioRepositorio.Comentar (comentario);
 
                 ViewBag.Mensagem = "Comentário cadastrado com sucesso";
@@ -44,13 +47,40 @@ namespace Senai.Projeto.Carfel.Controllers {
             return RedirectToAction ("Login", "Usuario");
         }
 
-
         [HttpGet]
         public IActionResult Administrador(){
-            ViewData["dados"] =  ComentarioRepositorio.Listar();
+            ViewData["comentarios"] = ComentarioRepositorio.Listar().Where(x => !x.Aprovado).ToList();
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Aprovar(int id_aprova){
+            ComentarioRepositorio.Aprovar(id_aprova);
 
+            // if(HttpContext.Session.GetString("tipoUsuario") == "admin"){
+            //     return RedirectToAction("Administrador", "Comentario");
+            // }
+            // return RedirectToAction("Login", "Usuario");
+            return RedirectToAction("Administrador", "Comentario");
+        }
+
+        [HttpGet]
+        public IActionResult Excluir(int id_reprova){
+            ComentarioRepositorio.Excluir(id_reprova);
+
+            // if(HttpContext.Session.GetString("tipoUsuario") == "admin"){
+            //     return RedirectToAction("Administrador", "Comentario");
+            // }
+            // return RedirectToAction("Login", "Usuario");
+            
+            return RedirectToAction("Administrador", "Comentario");
+        }
+
+        [HttpGet]
+        public IActionResult Comentarios_Aprovados(){
+            ViewData["Comentarios"] = ComentarioRepositorio.Listar().Where(x => x.Aprovado).ToList();
+
+            return View();
+        }
     }
 }
